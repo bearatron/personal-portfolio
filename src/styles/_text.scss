@@ -1,0 +1,73 @@
+@use "color";
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("/assets/DMSans-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Azeret Mono";
+  src: url("/assets/AzeretMono-VariableFont_wght.ttf") format("truetype");
+}
+
+$sans-font-family: "DM Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+$mono-font-family: "Azeret Mono", "Courier New", Courier, monospace;
+
+$typescale-factor: 1.25;
+
+@function exp-scale($start-value, $scale-factor, $n) {
+  @if $n == 0 {
+    @return $start-value;
+  } @else {
+    @return $scale-factor * exp-scale($start-value, $scale-factor, $n - 1);
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $mono-font-family;
+  color: color.$text;
+}
+
+p {
+  font-size: exp-scale(1rem, $typescale-factor, 0);
+  font-family: $sans-font-family;
+  color: color.$text;
+}
+
+a {
+  font-size: exp-scale(1rem, $typescale-factor, 0);
+  font-family: $mono-font-family;
+}
+
+h1 {
+  font-size: exp-scale(1rem, $typescale-factor, 6);
+}
+
+h2 {
+  font-size: exp-scale(1rem, $typescale-factor, 5);
+}
+
+h3 {
+  font-size: exp-scale(1rem, $typescale-factor, 4);
+}
+
+h4 {
+  font-size: exp-scale(1rem, $typescale-factor, 3);
+}
+
+h5 {
+  font-size: exp-scale(1rem, $typescale-factor, 2);
+}
+
+h6 {
+  font-size: exp-scale(1rem, $typescale-factor, 1);
+}
+
+$text-sm: 0.75rem;
+
+$text-xs: 0.563rem;
