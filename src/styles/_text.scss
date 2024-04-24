@@ -2,12 +2,12 @@
 
 @font-face {
   font-family: "DM Sans";
-  src: url("/assets/DMSans-VariableFont_wght.ttf") format("truetype");
+  src: url("./../assets/DMSans-VariableFont_wght.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Azeret Mono";
-  src: url("/assets/AzeretMono-VariableFont_wght.ttf") format("truetype");
+  src: url("./../assets/AzeretMono-VariableFont_wght.ttf") format("truetype");
 }
 
 $sans-font-family: "DM Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
